@@ -6,7 +6,7 @@ function getLocalStorage(key) {
 }
 
 $(document).ready(function() {
-    $("#selectDay").text(moment().format("dddd, MMMM Do"));
+    $("#selectDay").text(moment().format("MMMM Do, YYYY h:mm a"));
 
 // add 9:00 to 5:00 rows to the container
     for (var i = 9; i < 18; i++) {
@@ -15,7 +15,7 @@ $(document).ready(function() {
 
         var column1 = $('<div class="col-sm-2"> <p class="hour">' + timeFormat(i) + '</p>');
 
-        var column2 = $(`<div class="col-sm-8 past"><textarea id=text${i} class="description" placeholder="Add tasks here..."></textarea>`);        
+        var column2 = $(`<div class="col-sm-8 past"><textarea id=text${i} class="description" placeholder="Add scheduled tasks here . . ."></textarea>`);        
        
         var column3 = $(`<div class="col-sm-2"><button class="saveButton" id=${i}><i class="fas fa-save"></i></button>`)
         
