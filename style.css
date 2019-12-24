@@ -26,8 +26,14 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,116,1) 35%, rgb
 
   .hour {
       color: whitesmoke;
+      text-align: center;
+      padding-top: 10px;
   }
 
   .lead, .display-3 {
     text-align: center;
+  }
+
+  .container {
+      margin-bottom: 25px;
   }

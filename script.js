@@ -1,27 +1,27 @@
 function getLocalStorage(key) {
-    let value = localStorage.getItem(key);
+    var value = localStorage.getItem(key);
     if (value) {
         $(`#text${key}`).text(value);
     }
 }
 
-$( document ).ready(function() {
+$(document).ready(function() {
     $("#selectDay").text(moment().format("dddd, MMMM Do"));
 
 // add 9:00 to 5:00 rows to the container
-    for (let i = 9; i < 18; i++) {
+    for (var i = 9; i < 18; i++) {
     
         var row = $(`<div data-time=${i} id='${i}' class="row">`);
 
-        var col1 = $('<div class="col-sm-2"> <p class="hour">' + timeFormat(i) + '</p>');
+        var column1 = $('<div class="col-sm-2"> <p class="hour">' + timeFormat(i) + '</p>');
 
-        var col2 = $(`<div class="col-sm-8 past"><textarea id=text${i} class="description" placeholder="Add tasks here..."></textarea>`);        
+        var column2 = $(`<div class="col-sm-8 past"><textarea id=text${i} class="description" placeholder="Add tasks here..."></textarea>`);        
        
-        var col3 = $(`<div class="col-sm-2"><button class="saveButton" id=${i}><i class="fas fa-save"></i></button>`)
+        var column3 = $(`<div class="col-sm-2"><button class="saveButton" id=${i}><i class="fas fa-save"></i></button>`)
         
-        row.append(col1);
-        row.append(col2);
-        row.append(col3);
+        row.append(column1);
+        row.append(column2);
+        row.append(column3);
 
         $(".container").append(row);
 
@@ -54,7 +54,7 @@ setInterval(function() {
 
 var saveButton = $('.saveButton');
 saveButton.on('click', function(){
-    let eventId = $(this).attr('id');
-    let eventText = $(this).parent().siblings().children('.description').val();
+    var eventId = $(this).attr('id');
+    var eventText = $(this).parent().siblings().children('.description').val();
     localStorage.setItem(eventId, eventText);
 });});
