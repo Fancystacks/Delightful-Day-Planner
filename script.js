@@ -5,20 +5,20 @@ function getLocalStorage(key) {
     }
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     $("#selectDay").text(moment().format("MMMM Do, YYYY h:mm a"));
 
-// add 9:00 to 5:00 rows to the container
+    // add 9:00 to 5:00 rows to the container
     for (var i = 9; i < 18; i++) {
-    
+
         var row = $(`<div data-time=${i} id='${i}' class="row">`);
 
         var column1 = $('<div class="col-sm-2"> <p class="hour">' + timeFormat(i) + '</p>');
 
-        var column2 = $(`<div class="col-sm-8 past"><textarea id=text${i} class="description" placeholder="Add scheduled tasks here . . ."></textarea>`);        
-       
+        var column2 = $(`<div class="col-sm-8 past"><textarea id=text${i} class="description" placeholder="Add scheduled tasks here . . ."></textarea>`);
+
         var column3 = $(`<div class="col-sm-2"><button class="saveButton" id=${i}><i class="fas fa-save"></i></button>`)
-        
+
         row.append(column1);
         row.append(column2);
         row.append(column3);
@@ -28,33 +28,29 @@ $(document).ready(function() {
         getLocalStorage(i);
     }
 
-// format hours to correspond to daily hours
+    // format hours to correspond to daily hours
     function timeFormat(hours) {
         var dayTime = hours >= 12 ? ':00 pm' : ':00 am';
         hours = hours % 12;
         hours = hours ? hours : 12;
         return hours + dayTime;
     }
-timeFormat();
+    timeFormat();
 
-function updateColors(){
-        var currentTime = new Date().getHours();
-        for (var i = 9; i < 18; i++) { 
-         if ($(`#${i}`).data("time") == currentTime){
-            $(`#text${i}`).addClass( "present");
-        } else if (currentTime < $(`#${i}`).data("time")) {
-            $(`#text${i}`).addClass( "future");
-        }
-    }
-}
+    var saveButton = $('.saveButton');
+    saveButton.on('click', function() {
+        var savedColor = $(this).css("color", "red");
+        var eventId = $(this).attr('id');
+        var eventText = $(this).parent().siblings().children('.description').val().trim();
+        localStorage.setItem(eventId, eventText, savedColor);
+    });
 
-setInterval(function() {
-    updateColors();
-}, 1000);
+    var description = $('.description');
+    description.on('mouseenter', function() {
+        $(this).css("background-color", "purple");  
+    });
+    description.on('mouseleave', function() {
+        $(this).css("background-color", "white");   
+    });
 
-var saveButton = $('.saveButton');
-saveButton.on('click', function(){
-    var eventId = $(this).attr('id');
-    var eventText = $(this).parent().siblings().children('.description').val();
-    localStorage.setItem(eventId, eventText);
-});});
+});
