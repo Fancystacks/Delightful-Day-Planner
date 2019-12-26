@@ -1,9 +1,10 @@
-function getLocalStorage(key) {
-    var value = localStorage.getItem(key);
-    if (value) {
-        $(`#text${key}`).text(value);
-    }
-}
+// function getLocalStorage(key) {
+//     var value = localStorage.getItem(key);
+//     if (value) {
+//         $(`#text${key}`).text(value);
+//         $(`#text${key}`).css("color", "red");
+//     }
+// }
 
 $(document).ready(function () {
     $("#selectDay").text(moment().format("MMMM Do, YYYY h:mm a"));
@@ -25,32 +26,39 @@ $(document).ready(function () {
 
         $(".container").append(row);
 
-        getLocalStorage(i);
+        // getLocalStorage(i);
+        var value = localStorage.getItem(i);
+        if (value) {
+            $(`#text${i}`).text(value);
+            $(`#text${i}`).css("color", "red");
+        }
     }
 
-    // format hours to correspond to daily hours
-    function timeFormat(hours) {
-        var dayTime = hours >= 12 ? ':00 pm' : ':00 am';
-        hours = hours % 12;
-        hours = hours ? hours : 12;
-        return hours + dayTime;
-    }
-    timeFormat();
+        // format hours to correspond to daily hours
+        function timeFormat(hours) {
+            var dayTime = hours >= 12 ? ':00 pm' : ':00 am';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            return hours + dayTime;
+        }
+        timeFormat();
 
-    var saveButton = $('.saveButton');
-    saveButton.on('click', function() {
-        var savedColor = $(this).css("color", "red");
-        var eventId = $(this).attr('id');
-        var eventText = $(this).parent().siblings().children('.description').val().trim();
-        localStorage.setItem(eventId, eventText, savedColor);
-    });
+        var saveButton = $('.saveButton');
+        saveButton.on('click', function () {
+            var savedColor = 'red';
+            var eventId = $(this).attr('id');
+            var eventText = $(this).parent().siblings().children('.description').val().trim();
+            localStorage.setItem(eventId, eventText);
+            console.log(localStorage.getItem(eventId));
+            localStorage.setItem("savedColor", savedColor);
+        });
 
-    var description = $('.description');
-    description.on('mouseenter', function() {
-        $(this).css("background-color", "purple");  
-    });
-    description.on('mouseleave', function() {
-        $(this).css("background-color", "white");   
-    });
+        var description = $('.description');
+        description.on('mouseenter', function () {
+            $(this).css("background-color", "#967BB6");
+        });
+        description.on('mouseleave', function () {
+            $(this).css("background-color", "white");
+        });
 
-});
+    });
