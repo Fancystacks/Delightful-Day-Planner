@@ -1,10 +1,3 @@
-// function getLocalStorage(key) {
-//     var value = localStorage.getItem(key);
-//     if (value) {
-//         $(`#text${key}`).text(value);
-//         $(`#text${key}`).css("color", "red");
-//     }
-// }
 
 $(document).ready(function () {
     $("#selectDay").text(moment().format("MMMM Do, YYYY h:mm a"));
@@ -30,7 +23,8 @@ $(document).ready(function () {
         var value = localStorage.getItem(i);
         if (value) {
             $(`#text${i}`).text(value);
-            $(`#text${i}`).css("color", "red");
+            $(`#text${i}`).css("color", "limegreen");
+            $(`#text${i}`).css("font-weight", "bold");
         }
     }
 
