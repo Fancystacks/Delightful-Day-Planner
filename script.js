@@ -1,8 +1,8 @@
 
-$(document).ready(function () {
+$(document).ready(function () { // when the page loads, set the current time 
     $("#selectDay").text(moment().format("MMMM Do, YYYY h:mm a"));
 
-    // add 9:00 to 5:00 rows to the container
+    // add 9:00 to 5:00 rows to the container 
     for (var i = 9; i < 18; i++) {
 
         var row = $(`<div data-time=${i} id='${i}' class="row">`);
@@ -37,6 +37,7 @@ $(document).ready(function () {
         }
         timeFormat();
 
+        // when the buttons are clicked, save the text to localstorage and change the color
         var saveButton = $('.saveButton');
         saveButton.on('click', function () {
             var savedColor = 'red';
@@ -47,6 +48,7 @@ $(document).ready(function () {
             localStorage.setItem("savedColor", savedColor);
         });
 
+        // magical aesthetic hovering effect
         var description = $('.description');
         description.on('mouseenter', function () {
             $(this).css("background-color", "#967BB6");
