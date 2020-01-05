@@ -14,7 +14,7 @@
 
 #### [Colors correspond to actively saved tasks]
 
-## Saved items will appear green and bold until deleted. 
+## Saved items will appear green and bold until deleted, even after the user refreshes the page.
 
 ## To delete a task:
 - simply *delete* all content in the box
