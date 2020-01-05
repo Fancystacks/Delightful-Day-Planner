@@ -1,7 +1,7 @@
 # Delightful-Day-Planner
 
 ## Instructions:
-### Enter tasks inside the text box pertaining to the corresponding time.
+### Enter to-do tasks inside the text box pertaining to the corresponding time.
 
  <img src="https://user-images.githubusercontent.com/38336934/71402446-1d28a780-25ea-11ea-81ee-e782bb976e16.png" width="470" height="300">
 
@@ -14,7 +14,7 @@
 
 #### [Colors correspond to actively saved tasks]
 
-## Saved items will appear green and bold until deleted, even after the user refreshes the page.
+### Saved items will appear green and bold until deleted by the user.
 
 ## To delete a task:
 - simply *delete* all content in the box
