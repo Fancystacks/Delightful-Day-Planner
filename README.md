@@ -16,8 +16,8 @@
 
 ### Saved items will appear green and bold until deleted by the user.
 
-## To delete a task:
+## To delete a task from the planner:
 - simply *delete* all content in the box
 - proceed to *re-save* the empty time slot to start over
 
-### This site was created and deployed on [GitHub Pages](https://github.com/Fancystacks/Delightful-Day-Planner).
+#### This site was created and deployed on [GitHub Pages](https://github.com/Fancystacks/Delightful-Day-Planner).
