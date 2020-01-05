@@ -28,33 +28,33 @@ $(document).ready(function () { // when the page loads, set the current time
         }
     }
 
-        // format hours to correspond to daily hours
-        function timeFormat(hours) {
-            var dayTime = hours >= 12 ? ':00 pm' : ':00 am';
-            hours = hours % 12;
-            hours = hours ? hours : 12;
-            return hours + dayTime;
-        }
-        timeFormat();
+    // format hours to correspond to daily hours
+    function timeFormat(hours) {
+        var dayTime = hours >= 12 ? ':00 pm' : ':00 am';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        return hours + dayTime;
+    }
+    timeFormat();
 
-        // when the buttons are clicked, save the text to localstorage and change the color
-        var saveButton = $('.saveButton');
-        saveButton.on('click', function () {
-            var savedColor = 'red';
-            var eventId = $(this).attr('id');
-            var eventText = $(this).parent().siblings().children('.description').val().trim();
-            localStorage.setItem(eventId, eventText);
-            console.log(localStorage.getItem(eventId));
-            localStorage.setItem("savedColor", savedColor);
-        });
-
-        // magical aesthetic hovering effect
-        var description = $('.description');
-        description.on('mouseenter', function () {
-            $(this).css("background-color", "#967BB6");
-        });
-        description.on('mouseleave', function () {
-            $(this).css("background-color", "white");
-        });
-
+    // when the buttons are clicked, save the text to localstorage and change the color
+    var saveButton = $('.saveButton');
+    saveButton.on('click', function () {
+        var savedColor = 'red';
+        var eventId = $(this).attr('id');
+        var eventText = $(this).parent().siblings().children('.description').val().trim();
+        localStorage.setItem(eventId, eventText);
+        console.log(localStorage.getItem(eventId));
+        localStorage.setItem("savedColor", savedColor);
     });
+
+    // magical aesthetic hovering effect
+    var description = $('.description');
+    description.on('mouseenter', function () {
+        $(this).css("background-color", "#967BB6");
+    });
+    description.on('mouseleave', function () {
+        $(this).css("background-color", "white");
+    });
+
+});
