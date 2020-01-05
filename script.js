@@ -13,6 +13,7 @@ $(document).ready(function () { // when the page loads, set the current time
 
         var column3 = $(`<div class="col-sm-2"><button class="saveButton" id=${i}><i class="fas fa-save"></i></button>`)
 
+        // append the columns and rows to the page
         row.append(column1);
         row.append(column2);
         row.append(column3);
