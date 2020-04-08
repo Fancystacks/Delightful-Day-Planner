@@ -1,10 +1,10 @@
 # Delightful-Day-Planner
 
 ## Instructions:
+
 ### Enter to-do tasks inside the text box pertaining to the corresponding time.
 
  <img src="https://user-images.githubusercontent.com/38336934/71402446-1d28a780-25ea-11ea-81ee-e782bb976e16.png" width="470" height="300">
-
 
 #### Local storage will save the tasks after clicking the adjoining blue 'save' icon to the right of the text box.
 
@@ -17,7 +17,8 @@
 ### Saved items will appear green and bold until deleted by the user.
 
 ## To delete a task from the planner:
-- simply *delete* all content in the box
-- proceed to *re-save* the empty time slot to start over
 
-#### This site was created and deployed on [GitHub Pages](https://github.com/Fancystacks/Delightful-Day-Planner).
+- simply _delete_ all content in the box
+- proceed to _re-save_ the empty time slot to start over
+
+#### This site was created and deployed on [GitHub Pages](https://fancystacks.github.io/Delightful-Day-Planner/).
